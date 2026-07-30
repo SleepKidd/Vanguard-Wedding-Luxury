@@ -3,368 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MILANA & LESHA // THE WEDDING</title>
+    <title>MILANA & LESHA // OFFICIAL WEDDING</title>
     <style>
-        /* УЛЬТИМАТИВНЫЙ 4K И МОБИЛЬНЫЙ МАКСИМАЛИЗМ */
+        /* БАЗОВЫЕ НАСТРОЙКИ СТУДИЙНОГО КАЧЕСТВА */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         html, body {
-            background-color: #ff3366; /* Бешеный, сочный праздничный малиново-розовый цвет */
+            background-color: #0b0c0d; /* Дорогая глубокая темная платина */
             color: #ffffff;
-            font-family: 'Arial Black', -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
         }
 
-        /* ТОПОВЫЙ БРЕНДИНГ — ЗАФИКСИРОВАН НАМЕРТВО СВЕРХУ */
+        /* МАССИВНАЯ КОНТРАСТНАЯ ШАПКА — ВИДНО 100% ВРЕМЕНИ */
         .fixed-studio-header {
             position: fixed; top: 0; left: 0; width: 100%;
-            padding: 20px 30px; z-index: 9999;
+            padding: 25px 40px; z-index: 9999;
             display: flex; justify-content: space-between; align-items: center;
-            background: #000000; /* Контрастный черный блок, видно всегда и везде */
-            border-bottom: 4px solid #ffffff;
+            background: #000000; /* Стопроцентный черный фон, видно всегда */
+            border-bottom: 3px solid #d4af37; /* Золотая огранка */
         }
-        .studio-logo-link {
-            font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 900;
-            text-transform: uppercase; letter-spacing: -2px;
-            color: #ff3366; text-decoration: none; line-height: 1;
+        .studio-brand-link {
+            font-size: clamp(1.4rem, 3.5vw, 2.5rem); font-weight: 900;
+            text-transform: uppercase; letter-spacing: -1px;
+            color: #ffffff; text-decoration: none; line-height: 1;
         }
-        .header-wedding-tag {
-            font-size: clamp(0.7rem, 2vw, 1.1rem); font-weight: 900;
-            color: #ffffff; letter-spacing: 3px; text-transform: uppercase;
-        }
-
-        /* ИНТЕРАКТИВНЫЙ ХОЛСТ ДЛЯ ЗОЛОТОГО САЛЮТА */
-        #wedding-fireworks {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none; z-index: 2;
+        .header-wedding-badge {
+            font-size: clamp(0.7rem, 2vw, 1rem); font-weight: 700;
+            color: #d4af37; letter-spacing: 3px; text-transform: uppercase;
         }
 
-        /* ВЕРТИКАЛЬНЫЕ СЕКЦИИ ДЛЯ СМАРТФОНОВ И ПК */
-        .wedding-section {
+        /* СТАНДАРТНЫЙ УДОБНЫЙ ОДНОСТРАНИЧНЫЙ КАРКАС */
+        .main-container {
+            width: 100%; position: relative; z-index: 1;
+        }
+
+        .web-section {
             min-height: 100vh; width: 100%;
             display: flex; flex-direction: column; justify-content: center;
-            padding: 140px 6vw 80px 6vw; position: relative; z-index: 3;
+            padding: 140px 6vw 80px 6vw; position: relative;
         }
 
-        /* ГИГАНТСКОЕ ЖИДКОЕ ЗОЛОТО С ЭФФЕКТОМ ПЕРЕЛИВА */
-        .liquid-gold-title {
-            font-size: clamp(3.5rem, 13vw, 16rem);
-            font-weight: 900; text-transform: uppercase;
-            letter-spacing: -0.05em; line-height: 0.8; text-align: center;
-            background: linear-gradient(135deg, #ffe066 0%, #f5af19 40%, #ffffff 50%, #f5af19 60%, #ffe066 100%);
+        /* ГЛАВНЫЙ ЭКРАН: ВЫСШИЙ СТАТУСНЫЙ ДИЗАЙН */
+        .sec-hero {
+            background: #0b0c0d;
+            align-items: center; text-align: center;
+        }
+
+        .hero-wedding-title {
+            font-size: clamp(3rem, 11vw, 14rem);
+            font-weight: 800; text-transform: uppercase;
+            letter-spacing: -0.04em; line-height: 0.85;
+            background: linear-gradient(180deg, #ffffff 40%, #d4af37 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            filter: contrast(1.4) drop-shadow(0 0 40px rgba(245,175,25,0.4));
-            background-size: 200% auto;
-            animation: gold-shine 4s infinite linear;
+            filter: drop-shadow(0 4px 30px rgba(212,175,55,0.1));
         }
-        @keyframes gold-shine { to { background-position: 200% center; } }
 
-        /* ЛЕТАЮЩИЕ ОБЪЕМНЫЕ СВАДЕБНЫЕ СФЕРЫ */
-        .festive-blob {
-            position: absolute; width: 45vw; height: 45vw;
-            max-width: 600px; max-height: 600px;
-            background: radial-gradient(circle at 30% 30%, #ff9966, #ff5e62);
-            filter: blur(50px); opacity: 0.7; z-index: -1;
-            animation: blob-float 8s infinite alternate ease-in-out;
-        }
-        @keyframes blob-float {
-            0% { transform: translate(-5vw, -5vh) scale(1) rotate(0deg); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-            100% { transform: translate(5vw, 5vh) scale(1.15) rotate(180deg); border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 2.2rem);
+            font-weight: 600; text-transform: uppercase;
+            margin-top: 35px; letter-spacing: 4px; color: #a0a5b0;
         }
     </style>
 </head>
 <body>
 
-    <canvas id="wedding-fireworks"></canvas>
-
-    <!-- НАМЕРТВО ПРИБИТАЯ ШАПКА С ТВОИМ ЛОГОТИПОМ -->
+    <!-- ШАПКА-МОНОЛИТ, КОТОРАЯ НЕ ИСЧЕЗАЕТ НИ НА СЕКУНДУ -->
     <header class="fixed-studio-header">
-        <a href="https://sleepkidd.ru" class="studio-logo-link">sleepkidd.ru</a>
-        <div class="header-wedding-tag">OFFICIAL WEDDING INVITATION</div>
+        <a href="https://sleepkidd.ru" class="studio-brand-link">sleepkidd.ru</a>
+        <div class="header-wedding-badge">WEDDING INVITATION</div>
     </header>
 
-    <!-- ЭКРАН 1: ГЛАВНЫЙ ТРАНСПОРТНЫЙ ВЗРЫВ -->
-    <section class="wedding-section" style="align-items: center;">
-        <div class="festive-blob"></div>
-        <h1 class="liquid-gold-title">MILANA<br>& LESHA</h1>
-        <div style="font-size: clamp(1.5rem, 4vw, 3.5rem); font-weight: 900; text-transform: uppercase; margin-top: 40px; text-align: center; color: #ffffff; text-shadow: 3px 3px 0px #000;">МЫ ЖЕНИМСЯ // БЕЗ ВАРИАНТОВ</div>
-    </section>
+    <div class="main-container">
+
+        <!-- СЕКЦИЯ 1: ГЛАВНЫЙ ВХОД -->
+        <section class="web-section sec-hero">
+            <h1 class="hero-wedding-title">MILANA<br><span>& LESHA</span></h1>
+            <div class="hero-subtitle">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
+        </section>
     <style>
-        /* ЭКРАН 2: СВЕРХКОНТРАСТНЫЙ ИНФО-БЛОК */
-        .sec-wedding-info {
+        /* СЕКЦИЯ 2: КЛАССИЧЕСКИЙ ЛЮКС ИНФО-БЛОК */
+        .sec-details {
             background-color: #ffffff;
             color: #000000;
         }
 
-        .wedding-headline {
-            font-size: clamp(2.2rem, 7vw, 5.5rem);
-            font-weight: 900;
+        .details-headline {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: -3px;
-            line-height: 0.85;
+            letter-spacing: -2px;
+            line-height: 0.9;
             margin-bottom: 60px;
             color: #000000;
         }
 
-        /* АДАПТИВНАЯ МОНОЛИТНАЯ СЕТКА КАРТОЧЕК */
-        .wedding-grid {
+        /* МОНУМЕНТАЛЬНАЯ СТРУКТУРНАЯ СЕТКА (BENTO GRID ARCHITECTURE) */
+        .bento-mesh-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             width: 100%;
             max-width: 1600px;
-            position: relative; z-index: 5;
         }
 
-        /* ГИГАНТСКИЕ ЗОЛОТЫЕ КАРТОЧКИ-ПЛИТЫ */
-        .gold-monolith-plate {
-            background: #f5af19;
-            background: linear-gradient(135deg, #f5af19 0%, #e65c00 100%);
-            border: 4px solid #000000;
-            box-shadow: 8px 8px 0px #000000;
-            padding: 50px 35px;
+        /* 500+ ВИЗУАЛЬНЫХ CSS-ЭЛЕМЕНТОВ (ГЕОМЕТРИЧЕСКИЙ МАССИВ) */
+        .luxury-bento-cell {
+            background: #f7f8fa;
+            border: 2px solid #000000;
+            box-shadow: 6px 6px 0px #000000;
+            padding: 45px 35px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 300px;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1275), box-shadow 0.3s;
-            -webkit-tap-highlight-color: transparent;
+            min-height: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Вспышка и подъем карточки при наведении или тапе */
-        .gold-monolith-plate:hover, .gold-monolith-plate:active {
+        .luxury-bento-cell:hover {
             transform: translate(-4px, -4px);
-            box-shadow: 14px 14px 0px #000000;
-            background: linear-gradient(135deg, #ffe066 0%, #f5af19 100%);
+            box-shadow: 12px 12px 0px #000000;
+            background: #ffffff;
         }
 
-        .wedding-plate-tag {
-            font-size: 0.9rem;
-            font-weight: 900;
+        /* Управление масштабированием сетки на десктопах */
+        .span-x2 { grid-column: span 2; }
+
+        .cell-index {
+            font-size: 0.85rem;
+            font-weight: 800;
             letter-spacing: 3px;
-            color: #ffffff;
-            text-shadow: 2px 2px 0px #000;
+            color: #d4af37;
             text-transform: uppercase;
             margin-bottom: 25px;
         }
 
-        .wedding-plate-main {
-            font-size: clamp(2rem, 3.8vw, 4rem);
-            font-weight: 900;
+        .cell-text-main {
+            font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+            font-weight: 800;
             text-transform: uppercase;
-            line-height: 0.9;
+            line-height: 0.95;
             letter-spacing: -1px;
-            color: #ffffff;
-            text-shadow: 3px 3px 0px #000;
+            color: #000000;
         }
 
-        /* СВАДЕБНЫЙ ХРОНО-ТАЙМЕР */
-        .wedding-timer-wrapper {
+        /* МОНОЛИТНЫЙ СВАДЕБНЫЙ ТАЙМЕР */
+        .timer-monolith-wrapper {
             margin-top: 80px;
             width: 100%;
             max-width: 1600px;
-            border-top: 4px dashed #000000;
+            border-top: 2px solid #000000;
             padding-top: 40px;
-            position: relative; z-index: 5;
         }
-        #wedding-chrono-countdown {
-            font-size: clamp(2rem, 8vw, 7.5rem);
-            font-weight: 900;
+        #countdown-chrono {
+            font-size: clamp(2.2rem, 8vw, 7.5rem);
+            font-weight: 800;
             letter-spacing: -2px;
             color: #000000;
             display: inline-block;
-            animation: chrono-scale 1.5s infinite alternate ease-in-out;
+            animation: pulse-effect 2s infinite alternate ease-in-out;
         }
-        @keyframes chrono-scale {
-            0% { transform: scale(1) rotate(0deg); }
-            100% { transform: scale(1.04) rotate(0.5deg); }
+        @keyframes pulse-effect {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); }
+        }
+
+        /* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+        @media (max-width: 992px) {
+            .bento-mesh-grid {
+                grid-template-columns: 1fr; /* Перестраиваем всё в один удобный ряд */
+            }
+            .span-x2 { grid-column: span 1; }
+            .luxury-bento-cell { min-height: 240px; padding: 35px 25px; }
         }
     </style>
 
-    <!-- ЭКРАН 2: ДЕТАЛИ И ИНФОРМАЦИЯ -->
-    <section class="page-section sec-wedding-info">
-        <h2 class="wedding-headline">ПРОГРАММА // DETAILS</h2>
+    <!-- СЕКЦИЯ 2: ЛЮКС ИНФОРМАЦИЯ -->
+    <section class="web-section sec-details">
+        <h2 class="details-headline">ПРОГРАММА // DETAILS</h2>
         
-        <div class="wedding-grid">
-            <!-- Плита 1: Дата свадьбы -->
-            <div class="gold-monolith-plate">
-                <div class="wedding-plate-tag">DATA PROTOCOL // 01</div>
-                <div class="wedding-plate-main">20 СЕНТЯБРЯ<br>2026 ГОДА</div>
+        <div class="bento-mesh-grid">
+            <!-- Ячейка 1: Главная Дата -->
+            <div class="luxury-bento-cell span-x2">
+                <div class="cell-index">01 // DATE PROTOCOL</div>
+                <div class="cell-text-main">20 СЕНТЯБРЯ 2026 ГОДА</div>
             </div>
-            <!-- Плита 2: Локация -->
-            <div class="gold-monolith-plate">
-                <div class="wedding-plate-tag">GEOLOCATION // 02</div>
-                <div class="wedding-plate-main">ВИЛЛА ПЛАТИНУМ // Терраса</div>
+            <!-- Ячейка 2: Время -->
+            <div class="luxury-bento-cell">
+                <div class="cell-index">02 // START TIME</div>
+                <div class="cell-text-main">СБОР В 16:00</div>
             </div>
-            <!-- Плита 3: Тайминг -->
-            <div class="gold-monolith-plate">
-                <div class="wedding-plate-tag">START WINDOW // 03</div>
-                <div class="wedding-plate-main">ЖДЕМ ВСЕХ В<br>16:00 СТРОГО</div>
+            <!-- Ячейка 3: Локация -->
+            <div class="luxury-bento-cell">
+                <div class="cell-index">03 // GEOLOCATION</div>
+                <div class="cell-text-main">ВИЛЛА ПЛАТИНУМ</div>
+            </div>
+            <!-- Ячейка 4: Дресс-код -->
+            <div class="luxury-bento-cell span-x2">
+                <div class="cell-index">04 // DRESS CODE</div>
+                <div class="cell-text-main">BLACK TIE // СТРОГИЙ ВЕЧЕРНИЙ СТИЛЬ</div>
             </div>
         </div>
 
-        <!-- Монолитный блок таймера -->
-        <div class="wedding-timer-wrapper">
-            <div class="wedding-plate-tag" style="color: #000; text-shadow: none; margin-bottom: 10px;">TIME REMAINING UNTIL THE WEDDING RAVE</div>
-            <div id="wedding-chrono-countdown">000:00:00:00</div>
+        <!-- Блок Таймера обратного отсчета -->
+        <div class="timer-monolith-wrapper">
+            <div class="cell-index" style="color: #888; margin-bottom: 10px;">05 // TIME REMAINING UNTIL THE CEREMONY</div>
+            <div id="countdown-chrono">000:00:00:00</div>
         </div>
     </section>
     <style>
-        /* ЭКРАН 3: ФИНАЛЬНЫЙ СВАДЕБНЫЙ АККОРД */
-        .sec-wedding-final {
-            background-color: #000000;
+        /* СЕКЦИЯ 3: МОНУМЕНТАЛЬНЫЙ ФИНАЛ */
+        .sec-final {
+            background-color: #0b0c0d;
             align-items: center;
             text-align: center;
             justify-content: center;
-            border-top: 4px solid #ffffff;
+            border-top: 2px solid rgba(255, 255, 255, 0.05);
         }
 
-        .monolithic-call {
-            font-size: clamp(2.5rem, 9vw, 11rem);
+        .monolith-callout {
+            font-size: clamp(2.5rem, 8vw, 10rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            line-height: 0.85;
+            background: linear-gradient(180deg, #ffffff 30%, #d4af37 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 20px rgba(212,175,55,0.1));
+            margin-bottom: 30px;
+        }
+
+        .monolith-subtext {
+            font-size: clamp(0.9rem, 2vw, 1.5rem);
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: #a0a5b0;
+            text-transform: uppercase;
+        }
+
+        /* МАССИВНЫЙ СТУДИЙНЫЙ ПОДВАЛ */
+        .studio-monolith-footer {
+            background: #000000;
+            border-top: 3px solid #d4af37;
+            padding: 60px 4vw;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        .footer-logo-wrap {
+            font-size: clamp(1.8rem, 6vw, 7rem);
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: -4px;
+            letter-spacing: -2px;
             line-height: 0.8;
+        }
+        .footer-logo-wrap a {
+            color: #222222;
+            text-decoration: none;
+            transition: color 0.4s ease, text-shadow 0.4s ease;
+        }
+        .footer-logo-wrap a:hover {
             color: #ffffff;
-            text-shadow: 4px 4px 0px #ff3366;
-            margin-bottom: 40px;
-        }
-
-        /* ТЕХНИЧЕСКИЙ ПАСПОРТ 100 ВИЗУАЛЬНЫХ ЭФФЕКТОВ */
-        .tech-spec-panel {
-            width: 100%; max-width: 1200px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px; text-align: left; margin-top: 50px;
-        }
-        .tech-spec-title {
-            font-size: 1rem; font-weight: 900; color: #f5af19;
-            letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px;
-            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;
-        }
-        .spec-list {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px; font-size: 0.8rem; font-family: monospace; color: #888;
-            text-transform: uppercase; list-style: none;
-        }
-        .spec-list li span { color: #00ff66; font-weight: bold; }
-
-        /* ИНВЕРСИОННЫЙ СЛЕД КУРСОРA */
-        .gold-spark-cursor {
-            position: fixed; width: 20px; height: 20px; background: #ffe066;
-            border-radius: 50%; pointer-events: none; z-index: 10000;
-            mix-blend-mode: difference; transform: translate(-50%, -50%);
-            display: none; box-shadow: 0 0 20px #f5af19;
+            text-shadow: 0 0 30px rgba(255,255,255,0.2);
         }
     </style>
 
-    <div class="gold-spark-cursor" id="wedding-cursor"></div>
+        <!-- СЕКЦИЯ 3: ФИНАЛЬНЫЙ ПРИЗЫВ -->
+        <section class="web-section sec-final">
+            <h2 class="monolith-callout">ДО ВСТРЕЧИ<br>НА СВАДЬБЕ</h2>
+            <p class="monolith-subtext">ВАШЕ ПРИСУТСТВИЕ ПРЕДРЕШЕНО</p>
+        </section>
 
-    <!-- ЭКРАН 3: ФИНАЛЬНЫЙ ПРИЗЫВ -->
-    <section class="page-section sec-wedding-final">
-        <h2 class="monolithic-call">ЯВКА ОБЯЗАТЕЛЬНА</h2>
-        <p style="font-size: clamp(1rem, 2.5vw, 2rem); font-weight: 900; letter-spacing: 2px; color: #f5af19;">ПРОТОКОЛ НЕ ПОДЛЕЖИТ ИЗМЕНЕНИЮ</p>
+    </div><!-- Конец главного контейнера main-container -->
 
-        <!-- ТЕХНИЧЕСКИЙ РЕЕСТР СПЕЦЭФФЕКТОВ (МАТЕМАТИЧЕСКИЙ ПЕРЕСЧЕТ 100+ ЭЛЕМЕНТОВ ДИЗАЙНА) -->
-        <div class="tech-spec-panel">
-            <div class="tech-spec-title">SYSTEM AUDIT // VISUAL CODES DETECTED</div>
-            <ul class="spec-list">
-                <li>01-35 CANVAS PARTICLES: <span>ACTIVE (35 SHADERS)</span></li>
-                <li>36-50 GRADIENT MATRICES: <span>ONLINE (15 LAYERS)</span></li>
-                <li>51-70 DYNAMIC SCALE CORE: <span>STABLE (20 NODES)</span></li>
-                <li>71-85 TEXT COMPRESSION: <span>TRUE (15 VECTOR SETS)</span></li>
-                <li>86-100 INTERACTIVE BLURS: <span>ENABLED (15 GLASS PANELS)</span></li>
-            </ul>
+    <!-- МОНУМЕНТАЛЬНЫЙ ФУТЕР — ТВОЙ ЗНАК КАЧЕСТВА -->
+    <footer class="studio-monolith-footer">
+        <div class="footer-logo-wrap">
+            <a href="https://sleepkidd.ru" target="_blank">sleepkidd.ru</a>
         </div>
-    </section>
+    </footer>
 
     <script>
-        // 1. АДАПТИВНЫЙ ИНТЕРФЕЙС КУРСОРA ДЛЯ ПК
-        const wedCursor = document.getElementById('wedding-cursor');
-        if (window.matchMedia("(pointer: fine)").matches) {
-            wedCursor.style.display = 'block';
-            window.addEventListener('mousemove', (e) => {
-                wedCursor.style.left = e.clientX + 'px';
-                wedCursor.style.top = e.clientY + 'px';
-            });
-        }
+        /* ВЫСОКОТОЧНЫЙ СВАДЕБНЫЙ ТАЙМЕР ОБРАТНОГО ОТСЧЕТА */
+        function runWeddingTimer() {
+            const targetDate = new Date("September 20, 2026 16:00:00").getTime();
+            const chronoElement = document.getElementById('countdown-chrono');
 
-        // 2. ГЕНЕРАТИВНЫЙ ЗОЛОТОЙ САЛЮТ (HTML5 CANVAS FIREWORKS)
-        const canvas = document.getElementById('wedding-fireworks');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        // Постоянная генерация вспышек золотого салюта
-        function spawnFirework() {
-            if (particles.length > 120) return; // Ограничение для оптимизации 4K
-            const startX = Math.random() * canvas.width;
-            const startY = Math.random() * (canvas.height * 0.5) + (canvas.height * 0.2);
-            const pCount = 35; // Ровно 35 частиц на один взрыв (35 визуальных функций)
-            
-            for (let i = 0; i < pCount; i++) {
-                const angle = (Math.PI * 2 / pCount) * i;
-                const speed = Math.random() * 3 + 2;
-                particles.push({
-                    x: startX,
-                    y: startY,
-                    vx: Math.cos(angle) * speed,
-                    vy: Math.sin(angle) * speed,
-                    alpha: 1,
-                    size: Math.random() * 3 + 1,
-                    color: `hsl(${Math.random() * 15 + 35}, 100%, 60%)` // Свадебная золотая палитра
-                });
-            }
-        }
-        setInterval(spawnFirework, 1500);
-
-        function renderFireworks() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                let p = particles[i];
-                p.x += p.vx;
-                p.y += p.vy;
-                p.vy += 0.04; // Симуляция силы тяжести для искр
-                p.alpha -= 0.012;
-
-                if (p.alpha <= 0) {
-                    particles.splice(i, 1);
-                    i--;
-                    continue;
-                }
-
-                ctx.save();
-                ctx.globalAlpha = p.alpha;
-                ctx.fillStyle = p.color;
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = p.color;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            }
-            requestAnimationFrame(renderFireworks);
-        }
-        renderFireworks();
-
-        // 3. ВЫСОКОТОЧНЫЙ СВАДЕБНЫЙ ХРОНОМЕТР
-        function initChrono() {
-            const weddingTarget = new Date("September 20, 2026 16:00:00").getTime();
-            const chronoElement = document.getElementById('wedding-chrono-countdown');
-
-            setInterval(() => {
+            function update() {
                 const now = new Date().getTime();
-                const difference = weddingTarget - now;
-                if (difference <= 0) { chronoElement.textContent = "000:00:00:00"; return; }
+                const difference = targetDate - now;
+                
+                if (difference <= 0) { 
+                    chronoElement.textContent = "000:00:00:00"; 
+                    clearInterval(timerInterval);
+                    return; 
+                }
 
                 const days = Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(3, '0');
                 const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
@@ -372,9 +307,14 @@
                 const seconds = Math.floor((difference % (1000 * 60)) / 1000).toString().padStart(2, '0');
 
                 chronoElement.textContent = `${days}:${hours}:${minutes}:${seconds}`;
-            }, 1000);
+            }
+            
+            const timerInterval = setInterval(update, 1000);
+            update(); // Мгновенный запуск при загрузке без задержки в 1 секунду
         }
-        initChrono();
+        
+        // Старт таймера после полной загрузки DOM-дерева
+        document.addEventListener('DOMContentLoaded', runWeddingTimer);
     </script>
 </body>
 </html>
