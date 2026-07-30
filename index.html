@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILANA & LESHA // WEDDING MONOLITH</title>
+    <style>
+        /* СТУДИЙНЫЙ СБРОС И ОПТИМИЗАЦИЯ ТЕКСТУР */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html, body {
+            background-color: #050a08; /* Глубокий, почти черный изумрудный тон */
+            color: #ffffff;
+            font-family: 'Arial Black', -apple-system, sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        /* ЗАКРЕПЛЕННЫЙ БРЕНДИНГ СТУДИИ — ВСЕГДА В ФОКУСЕ */
+        .fixed-header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 30px 40px; z-index: 9999;
+            display: flex; justify-content: space-between; align-items: center;
+            pointer-events: none;
+        }
+        .brand-logo {
+            font-size: clamp(1.4rem, 3vw, 2.5rem); font-weight: 900;
+            text-transform: uppercase; letter-spacing: -1px;
+            color: #ffffff; mix-blend-mode: difference;
+            pointer-events: auto; text-decoration: none;
+            line-height: 1;
+        }
+
+        /* ВЕРТИКАЛЬНАЯ АДАПТИВНАЯ СЕТКА */
+        .page-section {
+            min-height: 100vh; width: 100%;
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 120px 6vw; position: relative; overflow: hidden;
+        }
+
+        /* ЭФФЕКТ СВЕТОШУМОВЫХ ВСПЫШЕК ПРИ СКРОЛЛЕ */
+        .ambient-flash {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #ffffff; opacity: 0; pointer-events: none; z-index: 9998;
+        }
+        .flash-trigger { animation: fast-flash 0.3s ease-out; }
+        @keyframes fast-flash { 0% { opacity: 0.5; } 100% { opacity: 0; } }
+
+        /* ГИГАНТСКОЕ ПЕРЕЛИВАЮЩЕЕСЯ ЖИДКОЕ ЗОЛОТО */
+        .liquid-gold-text {
+            font-size: clamp(3rem, 12vw, 16rem);
+            font-weight: 900; text-transform: uppercase;
+            letter-spacing: -0.05em; line-height: 0.8; text-align: center;
+            background: linear-gradient(135deg, #d4af37 0%, #ffffff 30%, #aa7c11 50%, #ffffff 70%, #d4af37 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: contrast(1.5) drop-shadow(0 0 50px rgba(212,175,55,0.15));
+            background-size: 200% auto;
+            animation: gold-flow 5s infinite linear;
+        }
+        @keyframes gold-flow { to { background-position: 200% center; } }
+
+        /* ИНВЕРСИОННЫЙ КУРСОР ДЛЯ ДЕСКТОПОВ */
+        .studio-cursor {
+            position: fixed; width: 24px; height: 24px; background: #ffffff;
+            border-radius: 50%; pointer-events: none; z-index: 10000;
+            mix-blend-mode: difference; transform: translate(-50%, -50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-flash" id="flash-overlay"></div>
+    <div class="studio-cursor" id="cursor"></div>
+
+    <!-- ТОПОВЫЙ КОПИРАЙТ, КОТОРЫЙ ВИДНО ВСЕГДА -->
+    <header class="fixed-header">
+        <a href="https://sleepkidd.ru" class="brand-logo">sleepkidd.ru</a>
+    </header>
+
+    <!-- ЭКРАН 1: ГЛАВНЫЙ МОНОЛИТ -->
+    <section class="page-section" style="align-items: center; justify-content: center; background: radial-gradient(circle at center, #0a1411 0%, #030605 100%);">
+        <div style="font-size: clamp(0.9rem, 2vw, 1.5rem); letter-spacing: 10px; color: #d4af37; margin-bottom: 25px; font-weight: 900; text-transform: uppercase;">WEDDING EXHIBITION</div>
+        <h1 class="liquid-gold-text">MILANA<br>& LESHA</h1>
+        <div style="font-size: clamp(1.2rem, 3vw, 2.5rem); font-weight: 900; text-transform: uppercase; margin-top: 40px; letter-spacing: -1px; color: rgba(255,255,255,0.4);">20.09.2026 // SAVE THE DATE</div>
+    </section>
+    <style>
+        /* ЭКРАН 2: МОНУМЕНТАЛЬНЫЙ ИНФО-БЛОК */
+        .sec-details {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .studio-headline {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            margin-bottom: 60px;
+        }
+
+        /* АДАПТИВНАЯ СЕТКА КАРТОЧЕК */
+        .grid-monolith {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1600px;
+            position: relative; z-index: 2;
+        }
+
+        /* ТЯЖЕЛЫЕ МАТОВЫЕ ПЛИТЫ С ЗОЛОТЫМ АКЦЕНТОМ */
+        .monolith-plate {
+            background: #0a1411;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .monolith-plate * { color: #ffffff; }
+
+        /* Эффект при наведении на ПК и тапе на телефоне */
+        .monolith-plate:hover, .monolith-plate:active {
+            transform: translateY(-8px);
+            background-color: #0e1e19;
+        }
+
+        .plate-number {
+            font-size: 0.9rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #d4af37;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .plate-title-text {
+            font-size: clamp(2rem, 3.5vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.95;
+            letter-spacing: -1px;
+        }
+
+        /* КИНЕТИЧЕСКИЙ ТАЙМЕР */
+        .timer-container {
+            margin-top: 80px;
+            width: 100%;
+            max-width: 1600px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 40px;
+            position: relative; z-index: 2;
+        }
+        #wedding-countdown {
+            font-size: clamp(2rem, 8vw, 7.5rem);
+            font-weight: 900;
+            letter-spacing: -3px;
+            color: #000000;
+            display: inline-block;
+            transform-origin: left center;
+            animation: pulse-scale 2s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
+        }
+        @keyframes pulse-scale {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); }
+        }
+    </style>
+
+    <!-- ЭКРАН 2: ИНФОРМАЦИЯ -->
+    <section class="page-section sec-details">
+        <h2 class="studio-headline">ОБЪЕКТ // СФЕРА SPEC</h2>
+        
+        <div class="grid-monolith">
+            <!-- Карточка 1: Дата -->
+            <div class="monolith-plate">
+                <div class="plate-number">01 // REGISTRATION</div>
+                <div class="plate-title-text">20 СЕНТЯБРЯ<br><span style="color: #d4af37;">2026</span></div>
+            </div>
+            <!-- Карточка 2: Место -->
+            <div class="monolith-plate">
+                <div class="plate-number">02 // GEOLOCATION</div>
+                <div class="plate-title-text">ВИЛЛА<br>ПЛАТИНУМ</div>
+            </div>
+            <!-- Карточка 3: Время -->
+            <div class="monolith-plate">
+                <div class="plate-number">03 // TIMING</div>
+                <div class="plate-title-text">СБОР В<br><span style="color: #d4af37;">16:00</span></div>
+            </div>
+        </div>
+
+        <!-- Блок Таймера -->
+        <div class="timer-container">
+            <div class="plate-number" style="color: #888; margin-bottom: 15px;">04 // TIME BEFORE WEDDING RAVE</div>
+            <div id="wedding-countdown">000:00:00:00</div>
+        </div>
+    </section>
+    <style>
+        /* ЭКРАН 3: ФОРМА RSVP (ПЛИТЫ НА ВЕСЬ ЭКРАН) */
+        .sec-wedding-rsvp {
+            background-color: #030605;
+            padding: 0;
+            display: flex;
+            flex-direction: row; /* На ПК плиты стоят в ряд */
+            height: 100vh;
+        }
+
+        .wedding-gate-plate {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .wedding-plate-yes { background-color: #050a08; border-right: 1px solid rgba(255,255,255,0.03); }
+        .wedding-plate-no { background-color: #0a0f0d; }
+
+        .wedding-label {
+            font-size: clamp(2.5rem, 6vw, 7rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            line-height: 0.85;
+            transition: color 0.3s;
+        }
+
+        .wedding-subtext {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            font-weight: 900;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .wedding-plate-yes .wedding-subtext { color: #d4af37; }
+        .wedding-plate-no .wedding-subtext { color: #ff0055; }
+
+        /* ЭКРАН УСПЕШНОГО РЕЗУЛЬТАТА */
+        #wedding-final-screen {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #030605; display: none; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 10;
+            opacity: 0; transition: opacity 0.5s ease;
+        }
+
+        /* МОБИЛЬНАЯ АДАПТИВНОСТЬ ДЛЯ СВАДЕБНЫХ ПЛИТ */
+        @media (max-width: 768px) {
+            .sec-wedding-rsvp {
+                flex-direction: column; /* Вертикальный стек под пальцы */
+                height: auto;
+                min-height: 100vh;
+            }
+            .wedding-gate-plate {
+                width: 100%;
+                height: 50vh; /* Ровно половина экрана смартфона */
+                padding: 40px 20px;
+            }
+            .wedding-gate-plate:first-child {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.03);
+            }
+            .wedding-subtext { opacity: 0.7; } /* Сразу показываем подсказку на мобилках */
+        }
+    </style>
+
+    <!-- ЭКРАН 3: МГНОВЕННЫЙ СВАДЕБНЫЙ RSVP -->
+    <section class="page-section sec-wedding-rsvp">
+        
+        <!-- ВАРИАНТ 1: ВОРВУСЬ -->
+        <div class="wedding-gate-plate wedding-plate-yes" id="wedding-yes">
+            <div style="font-size: 0.8rem; letter-spacing: 4px; color: #444; margin-bottom: 15px; font-weight: 900;">PROTOCOL // 01</div>
+            <div class="wedding-label">ВОРВУСЬ</div>
+            <div class="wedding-subtext">ПОДТВЕРДИТЬ ПРИСУТСТВИЕ</div>
+        </div>
+
+        <!-- ВАРИАНТ 2: ПАССАНУ -->
+        <div class="wedding-gate-plate wedding-plate-no" id="wedding-no">
+            <div style="font-size: 0.8rem; letter-spacing: 4px; color: #333; margin-bottom: 15px; font-weight: 900;">PROTOCOL // 02</div>
+            <div class="wedding-label" style="color: #1a2622;">ПАССАНУ</div>
+            <div class="wedding-subtext">ОТКЛОНИТЬ ДОСТУП</div>
+        </div>
+
+        <!-- ЭКРАН ПОДТВЕРЖДЕНИЯ -->
+        <div id="wedding-final-screen">
+            <div id="wedding-final-title" style="font-size: clamp(2rem, 6vw, 7rem); font-weight: 900; text-transform: uppercase; letter-spacing: -3px; text-align: center; line-height: 0.9;"></div>
+            <div style="font-size: 1rem; letter-spacing: 6px; color: #d4af37; margin-top: 30px; text-transform: uppercase; font-weight: 900;">РЕЕСТР ГОСТЕЙ ОБНОВЛЕН</div>
+        </div>
+
+    </section>
+
+    <script>
+        // 1. ОТКЛЮЧЕНИЕ КУРСОРA НА ТАЧ-СКРИНАХ
+        const cursor = document.getElementById('cursor');
+        if (window.matchMedia("(pointer: fine)").matches) {
+            cursor.style.display = 'block';
+            window.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+        }
+
+        // 2. ИНТЕЛЛЕКТУАЛЬНЫЙ СДВИГ ПЛИТ НА ДЕСКТОПАХ
+        const wedYes = document.getElementById('wedding-yes');
+        const wedNo = document.getElementById('wedding-no');
+
+        if (window.innerWidth > 768) {
+            wedYes.addEventListener('mouseenter', () => {
+                wedYes.style.flex = '2.3'; wedNo.style.flex = '1';
+                wedYes.style.backgroundColor = '#08110e';
+                wedYes.querySelector('.wedding-subtext').style.opacity = '1';
+            });
+            wedNo.addEventListener('mouseenter', () => {
+                wedNo.style.flex = '2.3'; wedYes.style.flex = '1';
+                wedNo.style.backgroundColor = '#111a17';
+                wedNo.querySelector('.wedding-label').style.color = '#ffffff';
+                wedNo.querySelector('.wedding-subtext').style.opacity = '1';
+            });
+            const wRsvpParent = wedYes.parentElement;
+            wRsvpParent.addEventListener('mouseleave', () => {
+                wedYes.style.flex = '1'; wedNo.style.flex = '1';
+                wedYes.style.backgroundColor = '#050a08'; wedNo.style.backgroundColor = '#0a0f0d';
+                wedNo.querySelector('.wedding-label').style.color = '#1a2622';
+                document.querySelectorAll('.wedding-subtext').forEach(el => el.style.opacity = '0');
+            });
+        }
+
+        // 3. ОБРАБОТКА МГНОВЕННОГО ВЫБОРА С ЭФФЕКТОМ ВСПЫШЕК
+        const wFinalScreen = document.getElementById('wedding-final-screen');
+        const wFinalTitle = document.getElementById('wedding-final-title');
+        const flashOverlay = document.getElementById('flash-overlay');
+
+        function submitWeddingChoice(text, color) {
+            // Эффект вспышки фотоаппарата
+            flashOverlay.classList.add('flash-active');
+            setTimeout(() => { flashOverlay.classList.remove('flash-active'); }, 300);
+
+            wFinalScreen.style.display = 'flex';
+            wFinalTitle.textContent = text;
+            wFinalTitle.style.color = color;
+            setTimeout(() => { wFinalScreen.style.opacity = '1'; }, 10);
+        }
+
+        wedYes.addEventListener('click', () => submitWeddingChoice('В СПИСКЕ // ГОРЬКО!', '#d4af37'));
+        wedNo.addEventListener('click', () => submitWeddingChoice('ОТКАЗ ПРИНЯТ', '#ff0055'));
+
+        // 4. ВЫСОКОТОЧНЫЙ СВАДЕБНЫЙ ТАЙМЕР
+        function runWeddingTimer() {
+            const target = new Date("September 20, 2026 16:00:00").getTime();
+            const timer = document.getElementById('wedding-countdown');
+
+            setInterval(() => {
+                const now = new Date().getTime();
+                const diff = target - now;
+                if (diff <= 0) { timer.textContent = "000:00:00:00"; return; }
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(3, '0');
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                const s = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+                timer.textContent = `${d}:${h}:${m}:${s}`;
+            }, 1000);
+        }
+        runWeddingTimer();
+    </script>
+</body>
+</html>
