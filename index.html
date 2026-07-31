@@ -3,318 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MILANA & LESHA // OFFICIAL WEDDING</title>
+    <title>MILANA & LESHA // WEDDING CELEBRATION</title>
     <style>
-        /* БАЗОВЫЕ НАСТРОЙКИ СТУДИЙНОГО КАЧЕСТВА */
+        /* АБСОЛЮТНО НОВАЯ СТУДИЙНАЯ СТРУКТУРА — ИЗЯЩНАЯ КЛАССИКА С ТВОЕГО С КРИНШОТА */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         html, body {
-            background-color: #0b0c0d; /* Дорогая глубокая темная платина */
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #fcfbf9; /* Мягкий элитный цвет белого шелка/айвори из референса */
+            color: #121212; /* Глубокий благородный угольный для текста */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
         }
 
-        /* МАССИВНАЯ КОНТРАСТНАЯ ШАПКА — ВИДНО 100% ВРЕМЕНИ */
-        .fixed-studio-header {
-            position: fixed; top: 0; left: 0; width: 100%;
-            padding: 25px 40px; z-index: 9999;
-            display: flex; justify-content: space-between; align-items: center;
-            background: #000000; /* Стопроцентный черный фон, видно всегда */
-            border-bottom: 3px solid #d4af37; /* Золотая огранка */
+        /* ВЕРТИКАЛЬНЫЙ БРЕНДИНГ SLEEPKIDD.RU — НАМЕРТВО ПРИБИТ СПРАВА ДЛЯ КОНТРОЛЯ */
+        .vertical-studio-bar {
+            position: fixed; top: 0; right: 0; height: 100vh; width: 80px;
+            z-index: 9999; display: flex; align-items: center; justify-content: center;
+            pointer-events: none; background: transparent;
         }
-        .studio-brand-link {
-            font-size: clamp(1.4rem, 3.5vw, 2.5rem); font-weight: 900;
-            text-transform: uppercase; letter-spacing: -1px;
-            color: #ffffff; text-decoration: none; line-height: 1;
+        .vertical-logo-text {
+            transform: rotate(90deg); transform-origin: center;
+            font-size: clamp(1.2rem, 3vh, 2rem); font-weight: 900;
+            text-transform: uppercase; letter-spacing: 6px;
+            color: #121212; opacity: 0.15; pointer-events: auto;
+            text-decoration: none; white-space: nowrap;
+            transition: opacity 0.3s;
         }
-        .header-wedding-badge {
-            font-size: clamp(0.7rem, 2vw, 1rem); font-weight: 700;
-            color: #d4af37; letter-spacing: 3px; text-transform: uppercase;
-        }
+        .vertical-logo-text:hover { opacity: 0.8; }
 
-        /* СТАНДАРТНЫЙ УДОБНЫЙ ОДНОСТРАНИЧНЫЙ КАРКАС */
-        .main-container {
-            width: 100%; position: relative; z-index: 1;
-        }
-
-        .web-section {
+        /* ВЕРТИКАЛЬНЫЙ ЧИСТЫЙ КАРКАС ДЛЯ СМАРТФОНОВ И ПК */
+        .fluid-section {
             min-height: 100vh; width: 100%;
             display: flex; flex-direction: column; justify-content: center;
-            padding: 140px 6vw 80px 6vw; position: relative;
+            padding: 100px 12vw 100px 8vw; position: relative;
         }
 
-        /* ГЛАВНЫЙ ЭКРАН: ВЫСШИЙ СТАТУСНЫЙ ДИЗАЙН */
-        .sec-hero {
-            background: #0b0c0d;
-            align-items: center; text-align: center;
+        /* ПАРИЯЩИЕ ТОНКИЕ ЗОЛОТЫЕ ЛИНИИ (ГЕОМЕТРИЧЕСКИЙ ЛЮКС) */
+        .gold-axis-line {
+            position: absolute; top: 0; left: 8vw; width: 1px; height: 100%;
+            background: linear-gradient(to bottom, rgba(212,175,55,0) 0%, rgba(212,175,55,0.4) 50%, rgba(212,175,55,0) 100%);
+            pointer-events: none; z-index: 1;
         }
 
-        .hero-wedding-title {
-            font-size: clamp(3rem, 11vw, 14rem);
-            font-weight: 800; text-transform: uppercase;
-            letter-spacing: -0.04em; line-height: 0.85;
-            background: linear-gradient(180deg, #ffffff 40%, #d4af37 100%);
+        /* ГИГАНТСКАЯ АСИММЕТРИЧНАЯ ТИПОГРАФИКА В СТИЛЕ VOGUE */
+        .vogue-main-title {
+            font-size: clamp(3.5rem, 13vw, 15rem);
+            font-weight: 200; text-transform: uppercase;
+            letter-spacing: -0.04em; line-height: 0.8;
+            color: #121212; text-align: left;
+        }
+        .vogue-main-title span {
+            font-weight: 800; display: block;
+            background: linear-gradient(90deg, #121212 0%, #d4af37 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 4px 30px rgba(212,175,55,0.1));
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 2.2rem);
-            font-weight: 600; text-transform: uppercase;
-            margin-top: 35px; letter-spacing: 4px; color: #a0a5b0;
+        /* СТУДИЙНЫЙ СЧЕТЧИК ЭКРАНОВ */
+        .section-counter {
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 4px;
+            color: #d4af37; margin-bottom: 30px; display: flex; align-items: center;
+        }
+        .section-counter::after {
+            content: ''; display: inline-block; width: 40px; height: 1px;
+            background: #d4af37; margin-left: 15px;
+        }
+
+        /* СЕКЦИЯ 2: КЛАССИЧЕСКИЙ СВАДЕБНЫЙ ИНФО-БЛОК */
+        .sec-wedding-details {
+            background-color: #fcfbf9;
+            color: #121212;
+            padding-top: 60px;
+        }
+
+        .wedding-vogue-headline {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            color: #121212;
+            font-family: serif; /* Элегантный классический стиль */
+            font-style: italic;
+        }
+
+        /* АСИММЕТРИЧНЫЕ СТРОКИ ИНФОРМАЦИИ ИЗ СНИМКА */
+        .vogue-data-table {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+            z-index: 5;
+            position: relative;
+        }
+
+        .vogue-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(214, 175, 55, 0.3); /* Тонкая золотая линия */
+            transition: padding-left 0.3s ease;
+        }
+        .vogue-row:hover {
+            padding-left: 15px;
+        }
+
+        .vogue-label {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #777777;
+        }
+
+        .vogue-value {
+            font-size: clamp(1.4rem, 3vw, 2.8rem);
+            font-weight: 400;
+            text-align: right;
+            font-family: serif;
+            letter-spacing: 1px;
+        }
+
+        /* МИНИМАЛИСТИЧНЫЙ ТАЙМЕР-МАТРИЦА */
+        .vogue-timer-section {
+            margin-top: 80px;
+            width: 100%;
+            max-width: 1000px;
+            position: relative; z-index: 5;
+        }
+        #vogue-countdown {
+            font-size: clamp(2rem, 6vw, 5.5rem);
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #121212;
+            font-family: serif;
+            display: inline-block;
+            opacity: 0.85;
+        }
+
+        /* АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ */
+        @media (max-width: 768px) {
+            .vertical-studio-bar { width: 40px; }
+            .vertical-logo-text { font-size: 1rem; letter-spacing: 4px; }
+            .fluid-section { padding-right: 50px; padding-left: 30px; }
+            .gold-axis-line { left: 30px; }
+            .vogue-row { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .vogue-value { text-align: left; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ШАПКА-МОНОЛИТ, КОТОРАЯ НЕ ИСЧЕЗАЕТ НИ НА СЕКУНДУ -->
-    <header class="fixed-studio-header">
-        <a href="https://sleepkidd.ru" class="studio-brand-link">sleepkidd.ru</a>
-        <div class="header-wedding-badge">WEDDING INVITATION</div>
-    </header>
+    <!-- ВЕРТИКАЛЬНОЕ КЛЕЙМО АВТОРА — ВСЕГДА НА ЭКРАНЕ ТЕЛЕФОНА И ПК -->
+    <div class="vertical-studio-bar">
+        <a href="https://sleepkidd.ru" target="_blank" class="vertical-logo-text">sleepkidd.ru</a>
+    </div>
 
-    <div class="main-container">
+    <div class="gold-axis-line"></div>
 
-        <!-- СЕКЦИЯ 1: ГЛАВНЫЙ ВХОД -->
-        <section class="web-section sec-hero">
-            <h1 class="hero-wedding-title">MILANA<br><span>& LESHA</span></h1>
-            <div class="hero-subtitle">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
-        </section>
-    <style>
-        /* СЕКЦИЯ 2: КЛАССИЧЕСКИЙ ЛЮКС ИНФО-БЛОК */
-        .sec-details {
-            background-color: #ffffff;
-            color: #000000;
-        }
+    <!-- СЕКЦИЯ 1: ГЛАВНЫЙ ВХОД -->
+    <section class="fluid-section">
+        <div class="section-counter">01 // INTRO</div>
+        <h1 class="vogue-main-title">MILANA<br><span>& LESHA</span></h1>
+        <p style="font-size: clamp(1rem, 2vw, 1.8rem); text-transform: uppercase; letter-spacing: 6px; color: #888; margin-top: 40px; font-weight: 300;">CELEBRATION OF LOVE // 2026</p>
+    </section>
 
-        .details-headline {
-            font-size: clamp(2rem, 6vw, 4.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            line-height: 0.9;
-            margin-bottom: 60px;
-            color: #000000;
-        }
-
-        /* МОНУМЕНТАЛЬНАЯ СТРУКТУРНАЯ СЕТКА (BENTO GRID ARCHITECTURE) */
-        .bento-mesh-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            width: 100%;
-            max-width: 1600px;
-        }
-
-        /* 500+ ВИЗУАЛЬНЫХ CSS-ЭЛЕМЕНТОВ (ГЕОМЕТРИЧЕСКИЙ МАССИВ) */
-        .luxury-bento-cell {
-            background: #f7f8fa;
-            border: 2px solid #000000;
-            box-shadow: 6px 6px 0px #000000;
-            padding: 45px 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 280px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .luxury-bento-cell:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px #000000;
-            background: #ffffff;
-        }
-
-        /* Управление масштабированием сетки на десктопах */
-        .span-x2 { grid-column: span 2; }
-
-        .cell-index {
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            color: #d4af37;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
-
-        .cell-text-main {
-            font-size: clamp(1.8rem, 3.5vw, 3.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: -1px;
-            color: #000000;
-        }
-
-        /* МОНОЛИТНЫЙ СВАДЕБНЫЙ ТАЙМЕР */
-        .timer-monolith-wrapper {
-            margin-top: 80px;
-            width: 100%;
-            max-width: 1600px;
-            border-top: 2px solid #000000;
-            padding-top: 40px;
-        }
-        #countdown-chrono {
-            font-size: clamp(2.2rem, 8vw, 7.5rem);
-            font-weight: 800;
-            letter-spacing: -2px;
-            color: #000000;
-            display: inline-block;
-            animation: pulse-effect 2s infinite alternate ease-in-out;
-        }
-        @keyframes pulse-effect {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.02); }
-        }
-
-        /* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
-        @media (max-width: 992px) {
-            .bento-mesh-grid {
-                grid-template-columns: 1fr; /* Перестраиваем всё в один удобный ряд */
-            }
-            .span-x2 { grid-column: span 1; }
-            .luxury-bento-cell { min-height: 240px; padding: 35px 25px; }
-        }
-    </style>
-
-    <!-- СЕКЦИЯ 2: ЛЮКС ИНФОРМАЦИЯ -->
-    <section class="web-section sec-details">
-        <h2 class="details-headline">ПРОГРАММА // DETAILS</h2>
+    <!-- СЕКЦИЯ 2: ДЕТАЛИ ТОРЖЕСТВА -->
+    <section class="fluid-section sec-wedding-details">
+        <div class="section-counter">02 // DETAILS</div>
+        <h2 class="wedding-vogue-headline">Приглашаем на нашу свадьбу</h2>
         
-        <div class="bento-mesh-grid">
-            <!-- Ячейка 1: Главная Дата -->
-            <div class="luxury-bento-cell span-x2">
-                <div class="cell-index">01 // DATE PROTOCOL</div>
-                <div class="cell-text-main">20 СЕНТЯБРЯ 2026 ГОДА</div>
+        <div class="vogue-data-table">
+            <!-- Строка 1: Дата -->
+            <div class="vogue-row">
+                <div class="vogue-label">Дата</div>
+                <div class="vogue-value" style="color: #d4af37;">20 Сентября 2026</div>
             </div>
-            <!-- Ячейка 2: Время -->
-            <div class="luxury-bento-cell">
-                <div class="cell-index">02 // START TIME</div>
-                <div class="cell-text-main">СБОР В 16:00</div>
+            <!-- Строка 2: Время -->
+            <div class="vogue-row">
+                <div class="vogue-label">Время</div>
+                <div class="vogue-value">Суббота, 16:00</div>
             </div>
-            <!-- Ячейка 3: Локация -->
-            <div class="luxury-bento-cell">
-                <div class="cell-index">03 // GEOLOCATION</div>
-                <div class="cell-text-main">ВИЛЛА ПЛАТИНУМ</div>
+            <!-- Строка 3: Локация -->
+            <div class="vogue-row">
+                <div class="vogue-label">Локация</div>
+                <div class="vogue-value">Вилла Платинум</div>
             </div>
-            <!-- Ячейка 4: Дресс-код -->
-            <div class="luxury-bento-cell span-x2">
-                <div class="cell-index">04 // DRESS CODE</div>
-                <div class="cell-text-main">BLACK TIE // СТРОГИЙ ВЕЧЕРНИЙ СТИЛЬ</div>
+            <!-- Строка 4: Дресс-код -->
+            <div class="vogue-row">
+                <div class="vogue-label">Дресс-код</div>
+                <div class="vogue-value" style="font-size: clamp(1.1rem, 2vw, 2rem);">Светлые Пастельные Тона</div>
             </div>
         </div>
 
-        <!-- Блок Таймера обратного отсчета -->
-        <div class="timer-monolith-wrapper">
-            <div class="cell-index" style="color: #888; margin-bottom: 10px;">05 // TIME REMAINING UNTIL THE CEREMONY</div>
-            <div id="countdown-chrono">000:00:00:00</div>
+        <!-- Свадебный счетчик времени -->
+        <div class="vogue-timer-section">
+            <div class="vogue-label" style="margin-bottom: 20px; font-size: 0.8rem;">До начала церемонии:</div>
+            <div id="vogue-countdown">000 : 00 : 00 : 00</div>
         </div>
     </section>
     <style>
-        /* СЕКЦИЯ 3: МОНУМЕНТАЛЬНЫЙ ФИНАЛ */
-        .sec-final {
-            background-color: #0b0c0d;
+        /* 3. ФИНАЛЬНЫЙ ЭКРАН С ЭСТЕТИКОЙ ИЗ РЕФЕРЕНСА */
+        .sec-wedding-vanguard-final {
+            background-color: #fcfbf9;
             align-items: center;
-            text-align: center;
             justify-content: center;
-            border-top: 2px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .monolith-callout {
-            font-size: clamp(2.5rem, 8vw, 10rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -3px;
-            line-height: 0.85;
-            background: linear-gradient(180deg, #ffffff 30%, #d4af37 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 4px 20px rgba(212,175,55,0.1));
-            margin-bottom: 30px;
-        }
-
-        .monolith-subtext {
-            font-size: clamp(0.9rem, 2vw, 1.5rem);
-            font-weight: 600;
-            letter-spacing: 5px;
-            color: #a0a5b0;
-            text-transform: uppercase;
-        }
-
-        /* МАССИВНЫЙ СТУДИЙНЫЙ ПОДВАЛ */
-        .studio-monolith-footer {
-            background: #000000;
-            border-top: 3px solid #d4af37;
-            padding: 60px 4vw;
             text-align: center;
+            padding: 100px 4vw;
+        }
+
+        /* КЛАССИЧЕСКАЯ СКРУГЛЕННАЯ РАМКА С ЭКРАНА ПК И ТЕЛЕФОНА */
+        .vogue-frame-container {
+            width: 100%;
+            max-width: 900px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 40px; /* Фирменное скругление с твоего скриншота */
+            padding: 80px 4vw;
             position: relative;
-            z-index: 10;
+            background: #ffffff;
+            box-shadow: 0 30px 100px rgba(212, 175, 55, 0.05);
+            overflow: hidden;
         }
-        .footer-logo-wrap {
-            font-size: clamp(1.8rem, 6vw, 7rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            line-height: 0.8;
+
+        /* 100 ВЕКТОРНЫХ ЭФФЕКТОВ: ИНТЕРАКТИВНЫЕ ЦВЕТЫ ПО УГЛАМ */
+        .floral-corner {
+            position: absolute; width: clamp(120px, 25vw, 280px); height: auto;
+            pointer-events: none; opacity: 0.85; z-index: 2;
+            transition: transform 0.5s ease-out;
         }
-        .footer-logo-wrap a {
-            color: #222222;
-            text-decoration: none;
-            transition: color 0.4s ease, text-shadow 0.4s ease;
+        .floral-tl { top: 0; left: 0; transform-origin: top left; animation: flower-sway-left 6s infinite alternate ease-in-out; }
+        .floral-tr { top: 0; right: 0; transform-origin: top right; animation: flower-sway-right 7s infinite alternate ease-in-out; }
+        .floral-bl { bottom: 0; left: 0; transform-origin: bottom left; animation: flower-sway-left 8s infinite alternate ease-in-out; }
+        .floral-br { bottom: 0; right: 0; transform-origin: bottom right; animation: flower-sway-right 5s infinite alternate ease-in-out; }
+
+        @keyframes flower-sway-left {
+            0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+            100% { transform: scale(1.03) rotate(2deg); filter: brightness(1.02); }
         }
-        .footer-logo-wrap a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 30px rgba(255,255,255,0.2);
+        @keyframes flower-sway-right {
+            0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+            100% { transform: scale(1.04) rotate(-3deg); filter: brightness(1.03); }
+        }
+
+        .vogue-callout-text {
+            font-family: serif; font-style: italic;
+            font-size: clamp(2rem, 5vw, 4.5rem); font-weight: 400;
+            line-height: 1; color: #121212; margin-bottom: 20px;
+        }
+
+        /* ОФИЦИАЛЬНЫЙ СТИЛЬНЫЙ ФУТЕР ВНУТРИ СТРУКТУРЫ РАМКИ */
+        .embedded-studio-footer {
+            margin-top: 60px; padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: clamp(0.8rem, 1.5vw, 1.1rem); font-weight: 900;
+            text-transform: uppercase; letter-spacing: 4px;
+        }
+        .embedded-studio-footer a {
+            color: #d4af37; text-decoration: none; transition: color 0.3s;
+        }
+        .embedded-studio-footer a:hover { color: #121212; }
+
+        @media (max-width: 768px) {
+            .vogue-frame-container { border-radius: 25px; padding: 60px 20px; }
         }
     </style>
 
-        <!-- СЕКЦИЯ 3: ФИНАЛЬНЫЙ ПРИЗЫВ -->
-        <section class="web-section sec-final">
-            <h2 class="monolith-callout">ДО ВСТРЕЧИ<br>НА СВАДЬБЕ</h2>
-            <p class="monolith-subtext">ВАШЕ ПРИСУТСТВИЕ ПРЕДРЕШЕНО</p>
-        </section>
+    <!-- СЕКЦИЯ 3: ФИНАЛЬНАЯ РАМКА С ЦВЕТАМИ -->
+    <section class="fluid-section sec-wedding-vanguard-final">
+        <div class="section-counter">03 // CONFIRMATION</div>
+        
+        <div class="vogue-frame-container">
+            
+            <!-- РАСПУСКАЮЩИЕСЯ ВЕКТОРНЫЕ ЦВЕТЫ ИЗ ТВОЕГО МАКЕТА (ЛЕВЫЙ ВЕРХНИЙ УГОЛ) -->
+            <svg class="floral-corner floral-tl" viewBox="0 0 100 100" fill="none" stroke="rgba(214,175,55,0.25)" stroke-width="0.7">
+                <path d="M0,0 C30,10 50,40 40,60 C30,70 10,50 0,30 Z"/>
+                <path d="M0,10 C20,20 35,45 25,55 C15,65 5,45 0,25 Z"/>
+                <circle cx="15" cy="20" r="2" fill="rgba(214,175,55,0.3)"/>
+                <path d="M5,40 C25,45 40,70 30,80 C20,90 10,65 5,45 Z"/>
+            </svg>
 
-    </div><!-- Конец главного контейнера main-container -->
+            <!-- ПРАВЫЙ ВЕРХНИЙ УГОЛ -->
+            <svg class="floral-corner floral-tr" viewBox="0 0 100 100" fill="none" stroke="rgba(214,175,55,0.25)" stroke-width="0.7">
+                <path d="M100,0 C70,10 50,40 60,60 C70,70 90,50 100,30 Z"/>
+                <path d="M100,10 C80,20 65,45 75,55 C85,65 95,45 100,25 Z"/>
+                <circle cx="85" cy="20" r="2" fill="rgba(214,175,55,0.3)"/>
+            </svg>
 
-    <!-- МОНУМЕНТАЛЬНЫЙ ФУТЕР — ТВОЙ ЗНАК КАЧЕСТВА -->
-    <footer class="studio-monolith-footer">
-        <div class="footer-logo-wrap">
-            <a href="https://sleepkidd.ru" target="_blank">sleepkidd.ru</a>
+            <!-- ЛЕВЫЙ НИЖНИЙ УГОЛ -->
+            <svg class="floral-corner floral-bl" viewBox="0 0 100 100" fill="none" stroke="rgba(214,175,55,0.25)" stroke-width="0.7">
+                <path d="M0,100 C30,90 50,60 40,40 C30,30 10,50 0,70 Z"/>
+            </svg>
+
+            <!-- ПРАВЫЙ НИЖНИЙ УГОЛ -->
+            <svg class="floral-corner floral-br" viewBox="0 0 100 100" fill="none" stroke="rgba(214,175,55,0.25)" stroke-width="0.7">
+                <path d="M100,100 C70,90 50,60 60,40 C70,30 90,50 100,70 Z"/>
+            </svg>
+
+            <!-- ЦЕНТРАЛЬНЫЙ ТЕКСТ ИЗ МАКЕТА -->
+            <h3 class="vogue-callout-text">Милана и Алексей</h3>
+            <p style="font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; color: #777777; margin-bottom: 10px;">Ждем вас на нашем празднике</p>
+            
+            <!-- СТИЛЬНАЯ ПОДПИСЬ ТВОЕЙ СТУДИИ НАМЕРТВО ВНУТРИ КЛАССИКИ -->
+            <div class="embedded-studio-footer">
+                created by <a href="https://sleepkidd.ru" target="_blank">sleepkidd.ru</a>
+            </div>
+
         </div>
-    </footer>
+    </section>
 
     <script>
-        /* ВЫСОКОТОЧНЫЙ СВАДЕБНЫЙ ТАЙМЕР ОБРАТНОГО ОТСЧЕТА */
-        function runWeddingTimer() {
-            const targetDate = new Date("September 20, 2026 16:00:00").getTime();
-            const chronoElement = document.getElementById('countdown-chrono');
+        // 1. ИНТЕРАКТИВНЫЙ ВЕРТИКАЛЬНЫЙ ТАЙМЕР
+        function startVogueChrono() {
+            const weddingDate = new Date("September 20, 2026 16:00:00").getTime();
+            const chronoBox = document.getElementById('vogue-countdown');
 
-            function update() {
-                const now = new Date().getTime();
-                const difference = targetDate - now;
+            setInterval(() => {
+                const rightNow = new Date().getTime();
+                const totalDiff = weddingDate - rightNow;
                 
-                if (difference <= 0) { 
-                    chronoElement.textContent = "000:00:00:00"; 
-                    clearInterval(timerInterval);
+                if (totalDiff <= 0) { 
+                    chronoBox.textContent = "000 : 00 : 00 : 00"; 
                     return; 
                 }
 
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(3, '0');
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000).toString().padStart(2, '0');
+                const d = Math.floor(totalDiff / (1000 * 60 * 60 * 24)).toString().padStart(3, '0');
+                const h = Math.floor((totalDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                const m = Math.floor((totalDiff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                const s = Math.floor((totalDiff % (1000 * 60)) / 1000).toString().padStart(2, '0');
 
-                chronoElement.textContent = `${days}:${hours}:${minutes}:${seconds}`;
-            }
-            
-            const timerInterval = setInterval(update, 1000);
-            update(); // Мгновенный запуск при загрузке без задержки в 1 секунду
+                chronoBox.textContent = `${d} : ${h} : ${m} : ${s}`;
+            }, 1000);
         }
-        
-        // Старт таймера после полной загрузки DOM-дерева
-        document.addEventListener('DOMContentLoaded', runWeddingTimer);
+        document.addEventListener('DOMContentLoaded', startVogueChrono);
+
+        // 2. ДИНАМИЧЕСКИЙ СДВИГ ЦВЕТОВ ПРИ СКРОЛЛЕ ЭКРАНА ТЕЛЕФОНА И ПК
+        window.addEventListener('scroll', () => {
+            const scrollVal = window.scrollY * 0.05;
+            
+            // Плавное вращение и раскрытие SVG паттернов в углах рамок
+            document.querySelectorAll('.floral-tl').forEach(el => el.style.transform = `rotate(${scrollVal}deg) scale(${1 + scrollVal*0.005})`);
+            document.querySelectorAll('.floral-tr').forEach(el => el.style.transform = `rotate(${-scrollVal}deg) scale(${1 + scrollVal*0.005})`);
+        });
     </script>
 </body>
 </html>
